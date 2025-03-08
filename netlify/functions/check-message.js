@@ -156,11 +156,8 @@ exports.checkMessageContent = async (text) => {
   
   // Additional sanitization - escape special characters
   const finalText = sanitizedText
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+    .replace(/</g, '-')
+    .replace(/>/g, '-');
   
   return { 
     valid: true,
